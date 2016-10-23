@@ -13,4 +13,167 @@ body {
   /* font-family: 'Open Sans', sans-serif; */
   -webkit-font-smoothing: antialiased;
   font-size: 1.6rem; /* 16px */
+  background-color: rgba(0,0,0,0.05);
+}
+
+header {
+  min-height: 4rem;
+  text-align: center;
+}
+main {
+  position: relative;
+  min-height: 20rem;
+}
+
+/* the default .button class styling will be a flat button */
+.button {
+  /* get rid of possible default 3D-bevel-border, for example, on
+     certain html elements such as button */
+  /* could have instead used my global class .remove-default-border */
+  border: 0;
+  /* remove default accessibility outline; I'm using my own for consistency; */
+  outline: none;
+  display: inline-block;
+  /* margin: 1rem; this should occur within the
+    layout context as the .button is used */
+  padding: 0.75em 1em;
+  border-radius: 2px;
+  cursor: pointer;
+
+  /* text-related styles */
+
+  /* color now applied from global-component.css
+     through .foreground-black/white class */
+  /*color: white;*/
+
+  /* setting font-size here is necessary to bring the button
+     element font-size equal to other .button class elements */
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+
+  /* The color "concrete" from colors.css will be the default background button
+    color if no other color class is specified. */
+  background-color: rgb(149,165,166);/* concrete */
+
+  /* http://www.w3schools.com/css/css3_transitions.asp */
+  /* http://www.w3schools.com/cssref/css3_pr_transition.asp */
+  /* transition: property duration timing-function delay|initial|inherit; */
+  /* a simple transition to smooth out CSS changes upon state changes */
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+/* additional styling for raised buttons */
+/* http://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+/* box-shadow: none|h-shadow v-shadow blur spread color |inset|initial|inherit; */
+.button.raised {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.button.raised:hover {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+}
+
+.modal-trigger {
+  display: block;
+  margin: 0 auto;
+  background-color: rgb(38, 166, 154);
+  color: white;
+  /* this will determine the width of the anchor/button and #dropdown1 */
+  width: 14rem;
+}
+
+.modal-trigger:hover {
+  background-color: rgb(41, 188, 174);
+  /*box-shadow: 0 -2px 2px 3px rgba(150,150,150,0.5);*/
+}
+
+#modal-bg {
+  position: absolute;
+  top:0;
+  left: 0;
+  transition: all .5s ease;
+  /*right: 80rem;
+  bottom: 40rem;*/
+  /*transform: translate(-50%,-50%);*/
+  /*right: 0;
+  bottom: 0;*/
+  /*background-color: rgba(0,0,0,0.5);*/
+}
+#modal-bg.cover {
+  /*transition: all .75s ease;*/
+  /*top: 0;*/
+  bottom: 0;
+  /*left: 0;*/
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal {
+  position: absolute;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  left: 50%;
+  top: -50%;
+  transition: all .5s ease;
+/*  padding: 1rem;
+  width: 50rem;
+  width: 50%;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, 0);
+  background-color: rgba(255,255,255,1.0);
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0.2rem 0.2rem rgba(0,0,0,0.5);
+  transition: all .5s ease;*/
+}
+.modal.expose {
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  min-width: 31rem;
+  height: auto;
+  width: 50%;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, 0);
+  background-color: rgba(255,255,255,1.0);
+  border-radius: 0.2rem;
+  box-shadow: 0 0.75rem 1rem 1rem rgba(0,0,0,0.15);
+}
+
+.modal.expose h4 {
+  font-size: 3.2rem;
+  font-weight: 400;
+  margin: 1.6rem 0;
+}
+.modal.expose .modal-action {
+  /* otherwise the padding "lingers" when .modal gets hidden */
+  padding: 1rem 1.5rem;
+}
+
+.modal-content p {
+  margin: 1.6rem 0 3.2rem 0;
+}
+
+.modal-action {
+  display: inline-block;
+  border-radius: 0.2rem;
+  /*padding: 1rem 1.5rem;*/
+  /*transition: all .75s ease;*/
+  float: right;
+  margin-right: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
+.modal-action:hover {
+  background-color: rgba(0,0,0,0.12);
+}
+
+footer p {
+  text-align: center;
 }
