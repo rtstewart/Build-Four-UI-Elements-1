@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  /* below will make 1 rem = 10px; */
+  font-size: 62.5%;
+}
+
+/* font-family: 'Open Sans', sans-serif; */
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.6rem; /* 16px */
+}
+
+body {
+  background-color: rgba(235,235,235,0.75);
+}
+
+header {
+  min-height: 4rem;
+  text-align: center;
+}
+main {
+  position: relative;
+  min-height: 15rem;
+}
+label {
+  position: relative;
+}
+label span {
+  float: right;
+  transition:all 0.5s ease;
+}
+label span:last-child {
+  /*display: none;*/
+  font-size: 0;
+  height: 0;
+  /*width: 0;*/
+  /*opacity: 0;*/
+}
+.wrapper label:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+label[for="toggle1"] {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.wrapper {
+  /*position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+  width: 500px;
+  margin: 90px auto;
+  box-shadow: 0 1px 2px 2px rgba(200,200,200,0.9);
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.toggle {
+  position:absolute;
+  display:none;
+  cursor:pointer;
+  left:-100%;
+  top:-100%;
+}
+
+.toggle + label {
+  border-bottom: solid .02rem #ddd;
+  padding: 10px 5px;
+  cursor: pointer;
+  background: rgb(38, 166, 154);;
+  display: block;
+  transition:all 750ms ease;
+}
+
+.sometext {
+  background-color: white;
+  font-size: 0;
+  height: 0;
+  transition:all 0.5s ease;
+}
+
+.toggle:checked + label + .sometext {
+  font-size: 16px;
+  height:auto;
+  opacity:1;
+  padding: 1rem;
+}
+.toggle:checked + label span:first-child {
+  font-size: 0;
+  height: 0;
+}
+.toggle:checked + label span:last-child {
+  font-size: 1.6rem;
+  height: auto;
+}
+
+/*.toggle:not(:checked) + label + .sometext {
+  color: red;
+  height: 0;
+  width: 0;
+}*/
+
+footer p {
+  text-align: center;
+}
