@@ -62,7 +62,7 @@ label[for="toggle1"] {
   background-color: #fff;
 }
 
-.toggle {
+input[type="checkbox"] {
   position:absolute;
   display:none;
   cursor:pointer;
@@ -70,7 +70,7 @@ label[for="toggle1"] {
   top:-100%;
 }
 
-.toggle + label {
+input[type="checkbox"] + label {
   border-bottom: solid .02rem #ddd;
   padding: 10px 5px;
   cursor: pointer;
@@ -85,18 +85,29 @@ label[for="toggle1"] {
   height: 0;
   transition:all 0.5s ease;
 }
-
+/*#close-all:checked + label ~ .sometext {
+  font-size: 0;
+  height: 0;
+  padding: 0;
+}*/
 .toggle:checked + label + .sometext {
+  /* expand the .sometext of the .toggle just selected */
   font-size: 16px;
   height:auto;
   opacity:1;
   padding: 1rem;
 }
+.toggle:checked + label .toggle:checked {
+  color: red;
+}
+
 .toggle:checked + label span:first-child {
+  /* hide arrow down */
   font-size: 0;
   height: 0;
 }
 .toggle:checked + label span:last-child {
+  /* show arrow up */
   font-size: 1.6rem;
   height: auto;
 }
