@@ -14,3 +14,77 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 1.6rem; /* 16px */
 }
+
+header {
+  min-height: 4rem;
+  text-align: center;
+}
+main {
+  position: relative;
+  min-height: 15rem;
+}
+
+/*-------------------*/
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 50px;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 2px;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  background: #26a69a;
+  cursor: pointer;
+  transition: all .3s ease-out;
+}
+
+.title {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.btn:hover {
+  background-color: #2bbbad;
+  color: #fff;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18)
+}
+
+.ripple {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  position: absolute;
+  opacity: 1;
+}
+
+.rippleEffect {
+    animation: rippleDrop .6s linear;
+}
+
+@keyframes rippleDrop {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+/*-------------------*/
+
+footer p {
+  text-align: center;
+}
