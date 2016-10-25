@@ -159,7 +159,8 @@ main {
   text-align: left;
   padding: 1rem;
   text-decoration: none;
-  color: var(--materialize-green);
+  color: rgb(38, 166, 154);
+  display: block;
   background-color: #fff;
   /* hide initially */
   /*width: 0;*/
